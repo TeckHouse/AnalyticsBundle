@@ -89,7 +89,7 @@ it's possible to delete the same widget with a path like this:
 /analytics/{widget-name}/delete
 ```
 
-at the end of the widget list there is the link to create new one
+at the end of the widget list there is a link to create new one
 
 ```
 /analytics/widget/new
