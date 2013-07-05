@@ -1,0 +1,77 @@
+parameters:
+    
+    teckhouse_analytics.collection.class: TeckHouse\AnalyticsBundle\Document\Collection
+    teckhouse_analytics.widget.class: TeckHouse\AnalyticsBundle\Document\Widget
+    
+    teckhouse_analytics.widget.types:
+        counter: TeckHouse\AnalyticsBundle\Document\Widget\Counter
+        leaderboard: TeckHouse\AnalyticsBundle\Document\Widget\Leaderboard
+
+services: 
+  
+#  teckhouse_analytics.document_manager.default:
+#      public: false
+#      factory-service: "@doctrine_mongodb"
+#      factory-method: "@getManager"
+#      class: "Doctrine\ODM\MongoDB\DocumentManager"
+#      arguments: ["default"]
+      
+  teckhouse_analytics.document_manager:
+      alias: doctrine_mongodb
+      
+  teckhouse_analytics.collection_manager.default:
+      class: TeckHouse\AnalyticsBundle\Manager\CollectionManager
+      arguments: 
+        - "@teckhouse_analytics.document_manager"
+        - %teckhouse_analytics.collection.class%
+      public: false
+
+  teckhouse_analytics.widget_manager.default:
+      class: TeckHouse\AnalyticsBundle\Manager\WidgetManager
+      arguments: 
+        - "@teckhouse_analytics.document_manager"
+        - "@teckhouse_analytics.collection_manager"
+        - %teckhouse_analytics.widget.class%
+        - %teckhouse_analytics.widget.types%
+      public: false
+               
+#  teckhouse_analytics.widget.counter:
+#      abstract:  true
+#      class: TeckHouse\AnalyticsBundle\Document\Widget\Counter
+#      
+#  teckhouse_analytics.widget.leaderboard:
+#      abstract:  true
+#      class: TeckHouse\AnalyticsBundle\Document\Widget\Leaderboard  
+      
+  teckhouse_analytics.menu_builder:
+      class: TeckHouse\AnalyticsBundle\Menu\MenuBuilder
+      arguments: ["@knp_menu.factory", "@teckhouse_analytics.widget_manager"] 
+      
+  teckhouse_analytics.menu.widget_menu:
+      class: Knp\Menu\MenuItem
+      factory_service: teckhouse_analytics.menu_builder
+      factory_method: widgetMenu
+      arguments: ["@security.context"]
+      scope: request
+      tags:
+          - { name: knp_menu.menu, alias: widget_menu }
+    
+         
+
+#  teckhouse_analytics.document_manager:
+#       factory_service:  doctrine_mongodb
+#       factory-method:   getManager
+#       class: Doctrine\ODM\MongoDB\DocumentManager
+#       public: false
+#       arugments: ["@doctrine_mongodb.odm.default_document_manager"]
+
+      
+#      calls:
+#        - [setDoctrine, ['@doctrine_mongodb']]
+#      arguments: ["@doctrine_mongodb.odm.default_document_manager"]
+#      arguments: ["@service_container"]
+#      arguments: ["@doctrine_mongodb"]
+#      arguments: ["@teckhouse_analytics.document_manager"]
+#      arguments: ["@fos_user.document_manager"]
+      
+  

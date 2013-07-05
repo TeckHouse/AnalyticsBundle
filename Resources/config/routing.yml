@@ -1,0 +1,15 @@
+teckhouse_analytics_dashboard:
+    pattern:  /dashboard
+    defaults: { _controller: TeckHouseAnalyticsBundle:Default:index }
+
+teckhouse_analytics_widget_show:
+    pattern:  /widget/{name}/show
+    defaults: { _controller: TeckHouseAnalyticsBundle:Widget\Show:index }
+
+teckhouse_analytics_widget_new:
+    pattern:  /widget/new
+    defaults: { _controller: TeckHouseAnalyticsBundle:Widget\New:index }    
+    
+teckhouse_analytics_widget_delete:
+    pattern:  /widget/{name}/delete
+    defaults: { _controller: TeckHouseAnalyticsBundle:Widget\Delete:index }

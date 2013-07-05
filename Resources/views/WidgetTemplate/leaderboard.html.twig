@@ -1,0 +1,13 @@
+Avaible widget
+<hr />
+{{ knp_menu_render('widget_menu') }}
+<hr />
+
+Widget name: {{ widget.name }}
+
+Widget Values:
+{% for collection in widget.collections %}
+    {% for data in collection.collectionData %}
+        {{ data.values }}
+    {% endfor %}
+{% endfor %}
