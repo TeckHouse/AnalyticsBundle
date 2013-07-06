@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of the TeckHouseAnalyticsBundle package.
+ *
+ * (c) TeckHouse <http://www.teckouse.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace TeckHouse\AnalyticsBundle\Document;
 
 use TeckHouse\AnalyticsBundle\Document\CollectionInterface as CInterface;
@@ -8,6 +17,8 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ODM\Document()
+ * 
+ * @author Mauro Foti <m.foti@teckhouse.com>
  */
 class Collection implements CInterface
 {
@@ -19,6 +30,7 @@ class Collection implements CInterface
     
     /**
      * @ODM\String
+     * @ODM\Index(unique=true, order="asc") 
      * @Assert\NotBlank()
      */
     protected $collectionName;

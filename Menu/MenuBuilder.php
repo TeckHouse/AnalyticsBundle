@@ -1,11 +1,24 @@
 <?php
 
+/*
+ * This file is part of the TeckHouseAnalyticsBundle package.
+ *
+ * (c) TeckHouse <http://www.teckouse.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 namespace TeckHouse\AnalyticsBundle\Menu;
 
 use Knp\Menu\FactoryInterface;
 use Symfony\Component\DependencyInjection\ContainerAware;
 use TeckHouse\AnalyticsBundle\Manager\WidgetManager;
 
+/**
+ * Main menu
+ * 
+ * @author Mauro Foti <m.foti@teckhouse.com>
+ */
 class MenuBuilder extends ContainerAware
 {
 

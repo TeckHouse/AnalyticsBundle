@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of the TeckHouseAnalyticsBundle package.
+ *
+ * (c) TeckHouse <http://www.teckouse.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace TeckHouse\AnalyticsBundle\Document;
 
 use Doctrine\ODM\MongoDB\Mapping\Annotations as ODM;
@@ -13,6 +22,8 @@ use Symfony\Component\Validator\Constraints as Assert;
  *      "counter"       = "TeckHouse\AnalyticsBundle\Document\Widget\Counter", 
  *      "leaderboard"   = "TeckHouse\AnalyticsBundle\Document\Widget\Leaderboard"
  * })
+ * 
+ * @author Mauro Foti <m.foti@teckhouse.com>
  */
 class Widget implements WidgetInterface
 {
@@ -27,7 +38,8 @@ class Widget implements WidgetInterface
 
     /**
      *
-     * @ODM\String
+     * @ODM\String 
+     * @ODM\Index(unique=true, order="asc") 
      * @Assert\NotBlank()
      * 
      * @var string

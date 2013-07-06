@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of the TeckHouseAnalyticsBundle package.
+ *
+ * (c) TeckHouse <http://www.teckouse.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace TeckHouse\AnalyticsBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -8,8 +17,15 @@ use TeckHouse\AnalyticsBundle\Document\WidgetInterface;
 use TeckHouse\AnalyticsBundle\Document\CollectionInterface;
 use TeckHouse\AnalyticsBundle\Document\CollectionData;
 
+/**
+ * @author Mauro Foti <m.foti@teckouse.com>
+ */
 class DefaultController extends Controller
 {
+    
+    /**
+     * Dashboard
+     */
     public function indexAction()
     {
         
@@ -52,17 +68,5 @@ class DefaultController extends Controller
         */
         
         return $this->render('TeckHouseAnalyticsBundle:Default:index.html.twig');
-    }
-    
-    public function showWidgetAction($name)
-    {
-
-        $widget = $this->get("teckhouse_analytics.widget_manager")->findOneByName($name);
-        
-        if(is_null($widget) || ! $widget instanceOf WidgetInterface){
-            echo "Error: Widget Not Found"; die;
-        }
-        
-        return $this->render($widget->getTemplate(), array("widget" => $widget));
     }
 }

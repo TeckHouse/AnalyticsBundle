@@ -1,11 +1,23 @@
 <?php
 
+/*
+ * This file is part of the TeckHouseAnalyticsBundle package.
+ *
+ * (c) TeckHouse <http://www.teckouse.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace TeckHouse\AnalyticsBundle\DependencyInjection\Compiler;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\Reference;
 
+/**
+ * @author Mauro Foti <m.foti@teckhouse.com>
+ */
 class AnalyticsCompilerPass implements CompilerPassInterface
 {
 
