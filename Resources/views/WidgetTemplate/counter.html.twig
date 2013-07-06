@@ -1,15 +1,13 @@
-Avaible widget
-<hr />
-{{ knp_menu_render('widget_menu') }}
-<hr />
-
-Widget name: {{ widget.name }}
-<br />
-<br />
-Widget Values:
-{% for collection in widget.collections %}
-    <br />Collection: {{ collection.collectionName }}
-    {% for data in collection.collectionData %}
-        <br /> @{{ data.timestamp|date('U') }}: {{ data.value }} 
+{% block content %}
+    Widget name: {{ widget.name }}
+    <br />
+    <br />
+    Widget Values:
+    {% for collection in widget.collections %}
+        <br />Collection: {{ collection.collectionName }}
+        {% for data in collection.collectionData %}
+            <br /> @{{ data.timestamp|date('U') }}: {{ data.value }} 
+        {% endfor %}
     {% endfor %}
-{% endfor %}
+        
+{% endblock content %}

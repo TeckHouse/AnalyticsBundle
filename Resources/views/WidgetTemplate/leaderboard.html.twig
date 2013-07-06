@@ -1,7 +1,4 @@
-Avaible widget
-<hr />
-{{ knp_menu_render('widget_menu') }}
-<hr />
+{% block content %}
 
 Widget name: {{ widget.name }}
 
@@ -11,3 +8,5 @@ Widget Values:
         {{ data.values }}
     {% endfor %}
 {% endfor %}
+
+{% endblock content %}
