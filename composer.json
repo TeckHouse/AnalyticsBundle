@@ -1,7 +1,7 @@
 {
-    "name": "TeckHouse/AnalyticsBundle",
+    "name": "teckhouse/analytics-bundle",
     "type": "symfony-bundle",
-    "description": "Extensible stats for your site.",
+    "description": "Extensible stats system for your site.",
     "keywords": ["stat", "stats", "web stats", "stats", "analytics", "analysis", 
                 "counter", "gauges", "graphs", "bars", "boxes", "leaderboard",
                 "pins", "status", "timeline", "leaderboard", "funnles", "completition" ],
@@ -18,6 +18,9 @@
     },
     "require-dev": {
         "symfony/framework-bundle": ">=2.1,<2.2-dev"
+    },
+    "suggest": {
+        "knplabs/knp-menu-bundle": "Useful to show a menu with all available widget"
     },
     "autoload": {
         "psr-0": { "TeckHouse\\AnalyticsBundle": "" }
