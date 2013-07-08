@@ -1,6 +1,8 @@
 TeckHouse AnalyticsBundle
 =================
 
+[![Total Downloads](https://poser.pugx.org/teckhouse/analytics-bundle/d/total.png)](https://packagist.org/packages/teckhouse/analytics-bundle)
+
 This Bundle provide a Symfony2 stats system so you can track varius information.
 
 You can easly collect data and define widget to show it. There are some dewfault widget that you can use:
