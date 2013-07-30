@@ -16,6 +16,19 @@ Prerequisites
 
 The code is tested with Symfony 2.2.
 
+Installation
+-------------
+
+Install with composer
+
+```
+"teckhouse/analytics-bundle": "dev-master"
+```
+
+Register the bundle
+```
+new TeckHouse\AnalyticsBundle\TeckHouseAnalyticsBundle()
+```
 
 Documentation
 -------------
