@@ -1,4 +1,6 @@
-{% block content %}
+{% extends "TeckHouseAnalyticsBundle::layout.html.twig" %}
+
+{% block teckhouse_analytics_widget_content %}
 
 <form action="{{ path('teckhouse_analytics_widget_new') }}" method="post" {{ form_enctype(form) }}>
     {{ form_widget(form) }}
@@ -6,4 +8,4 @@
     <input type="submit" />
 </form>
 
-{% endblock content %}
+{% endblock teckhouse_analytics_widget_content %}
