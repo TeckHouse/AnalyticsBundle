@@ -12,8 +12,8 @@
 namespace TeckHouse\AnalyticsBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
-use Symfony\Component\DependencyInjection\ContainerBuilder;
-use TeckHouse\AnalyticsBundle\DependencyInjection\Compiler\AnalyticsCompilerPass;
+//use Symfony\Component\DependencyInjection\ContainerBuilder;
+//use TeckHouse\AnalyticsBundle\DependencyInjection\Compiler\AnalyticsCompilerPass;
 
 /**
  * @author Mauro Foti <m.foti@teckouse.com>

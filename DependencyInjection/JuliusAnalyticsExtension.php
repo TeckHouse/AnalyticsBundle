@@ -30,7 +30,7 @@ class TeckHouseAnalyticsExtension extends Extension
      * {@inheritDoc}
      */
     public function load(array $configs, ContainerBuilder $container)
-    {
+    { 
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
 
@@ -41,9 +41,9 @@ class TeckHouseAnalyticsExtension extends Extension
         $container->setAlias('teckhouse_analytics.collection_manager', $config['service']['collection_manager']);
         $container->setAlias('teckhouse_analytics.widget_manager', $config['service']['widget_manager']);
         
-        $menuDefinition = $container->getDefinition(
-                'teckhouse_analytics.menu_builder'
-        );
+//        $menuDefinition = $container->getDefinition(
+//                'teckhouse_analytics.menu_builder'
+//        );
 
         $wdigetManagerDefinition = $container->getDefinition(
                 'teckhouse_analytics.widget_manager.default'
