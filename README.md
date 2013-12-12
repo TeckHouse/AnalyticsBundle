@@ -47,3 +47,7 @@ License
 This bundle is under the MIT license. See the complete license in the bundle:
 
     Resources/meta/LICENSE
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/TeckHouse/analyticsbundle/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
